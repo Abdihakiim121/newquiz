@@ -21,6 +21,7 @@ export class QuestionsController {
   async createQuiz(@Body() createQuestionDto:CreateQuestionDto):Promise<QuestionsEntity>{
     const quiz = await this.quizService.getQuizById(createQuestionDto.quizId);
     console.log("========"+quiz);
+    console.log("we will revert this changes");
     return await this.questionService.createQuestion(createQuestionDto, quiz);
   }
 }
